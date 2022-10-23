@@ -31,11 +31,11 @@ public class EmployeeValidator {
 	}
 
 	private boolean isLastNameValid(Employee employee) {
-		return employee.getLastName().matches("[a-zA-Z]+") && (employee.getLastName().length() > 2);
+		return employee.getLastName().matches("[a-zA-Z]+") && (employee.getLastName().length() >= 1);
 	}
 
 	private boolean isFirstNameValid(Employee employee) {
-		return employee.getFirstName().matches("[a-zA-Z]+") && (employee.getFirstName().length() > 2);
+		return employee.getFirstName().matches("[a-zA-Z]+") && (employee.getFirstName().length() >= 1);
 	}
 	
 }

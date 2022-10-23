@@ -13,7 +13,7 @@ public class Employee {
 	private static final int SALARY_INDEX = 4;
 	private static final int ID = 5;
 	private int identification;
-	private String nume;/** The last name of the employee */
+	private String lastName;/** The last name of the employee */
 	private String firstName; /** The first name of the employee */
 	private String cnp; /** The unique id of the employee */
 	private DidacticFunction function; /** The didactic function of the employee inside the university */
@@ -24,7 +24,7 @@ public class Employee {
 	 */
 	public Employee() {
 		this.firstName = "";
-		this.nume  = "";
+		this.lastName = "";
 		this.cnp       = "";
 		this.function  = DidacticFunction.ASISTENT;
 		this.salary    = 0.0d;
@@ -35,7 +35,7 @@ public class Employee {
 	 */
 	public Employee(String firstName, String lastName, String cnp, DidacticFunction function, Double salary) {
 		this.firstName = firstName;
-		this.nume  = lastName;
+		this.lastName = lastName;
 		this.cnp       = cnp;
 		this.function  = function;
 		this.salary    = salary;
@@ -58,11 +58,11 @@ public class Employee {
 	}
 
 	public String getLastName() {
-		return nume;
+		return lastName;
 	}
 
 	public void setLastName(String lastName) {
-		this.nume = lastName;
+		this.lastName = lastName;
 	}
 
 	public String getCnp() {
@@ -93,7 +93,7 @@ public class Employee {
 	public String toString() {
 		String employee = "";
 		employee += firstName + ";";
-		employee += nume + ";";
+		employee += lastName + ";";
 		employee += cnp + ";";
 		employee += function.toString() + ";";
 		employee += salary + ";";
@@ -111,7 +111,7 @@ public class Employee {
         }
 		final Employee employee = (Employee) otherEmployee;
 		boolean hasSameFirstName = this.firstName.equals(employee.getLastName()),
-				hasSameLastName  = this.nume.equals(employee.getLastName()),
+				hasSameLastName  = this.lastName.equals(employee.getLastName()),
 				hasSameCNP       = this.cnp.equals(employee.getCnp()),
 				hasSameFunction  = this.function.equals(employee.getFunction()),
 				hasSameSalary    = this.salary.equals(employee.getSalary());
