@@ -6,19 +6,26 @@ import AngajatiApp.model.Employee;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import javax.swing.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static AngajatiApp.controller.DidacticFunction.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 class EmployeeMockTest {
     EmployeeRepositoryInterface employeesRepository;
     EmployeeController employeeController;
     EmployeeMock employeeMock;
-
+    private List<Employee> employeeList;
     @BeforeEach
     public void setUp() {
         employeesRepository = new EmployeeMock();
         employeeController = new EmployeeController(employeesRepository);
         employeeMock=new EmployeeMock();
+        employeeList=employeeMock.getEmployeeList();
     }
 
     @Test
@@ -58,7 +65,7 @@ class EmployeeMockTest {
         employee.setFirstName("Costache");
         employee.setLastName("Maria3");
         employee.setCnp("2991111015610");
-        employee.setFunction(DidacticFunction.CONFERENTIAR);
+        employee.setFunction(CONFERENTIAR);
         employee.setSalary(-1D);
        /* int nr = employeesRepository.getEmployeeList().size();
         employeeController.addEmployee(employee);
@@ -74,7 +81,7 @@ class EmployeeMockTest {
         employee.setFirstName("Ardean");
         employee.setLastName("Sorin");
         employee.setCnp("188114131521");
-        employee.setFunction(DidacticFunction.CONFERENTIAR);
+        employee.setFunction(CONFERENTIAR);
         employee.setSalary(2000D);
         /*int nr = employeesRepository.getEmployeeList().size();
         employeeController.addEmployee(employee);
@@ -106,7 +113,7 @@ class EmployeeMockTest {
         employee.setFirstName("Popescu");
         employee.setLastName("Liviu");
         employee.setCnp("1991141315214");
-        employee.setFunction(DidacticFunction.CONFERENTIAR);
+        employee.setFunction(CONFERENTIAR);
         employee.setSalary(0D);
        /* int nr = employeesRepository.getEmployeeList().size();
         employeeController.addEmployee(employee);
@@ -131,4 +138,79 @@ class EmployeeMockTest {
         employeeAdded= employeeMock.addEmployee(employee);
         assertEquals(false, employeeAdded);
     }
+
+    // Lab3 -> modify function test
+/*
+    @Test
+    void modifyEmployeeFunctionValid() {
+        Employee employee=new Employee();
+        employee.setIdentification(27);
+        employee.setFirstName("Radaslavescu");
+        employee.setLastName("Constantinc");
+        employee.setCnp("234567891234");
+        employee.setFunction(DidacticFunction.ASISTENT);
+        employee.setSalary(15000D);
+        List<Employee> employeeList= employeeMock.getEmployeeList();
+        employeeList.add(employee);
+
+        for(int i=0;i<employeeList.size();i++){
+
+            if(employeeList.get(i).getIdentification()==employee.getIdentification()){
+                employeeMock.modifyEmployeeFunction(employee,CONFERENTIAR);
+            }
+        }
+
+        assertEquals(CONFERENTIAR,employee.getFunction());
+    }
+*/
+
+    @Test
+    void modifyEmployeeFunctionIDValid() {
+        Employee employee=new Employee();
+        employee.setIdentification(27);
+        employee.setFirstName("Radaslavescu");
+        employee.setLastName("Constantinc");
+        employee.setCnp("234567891234");
+        employee.setFunction(DidacticFunction.ASISTENT);
+        employee.setSalary(15000D);
+        List<Employee> employeeList= employeeMock.getEmployeeList();
+        employeeList.add(employee);
+        employeeMock.modifyEmployeeFunction(employee,CONFERENTIAR);
+        // employee.setFunction(CONFERENTIAR);
+        assertEquals(CONFERENTIAR,employee.getFunction());
+    }
+    @Test
+    void modifyEmployeeFunctionIDInValid() {
+        Employee employee = new Employee();
+        employee.setIdentification(28);
+        employee.setFirstName("Bogdan");
+        employee.setLastName("Vrajitoarea");
+        employee.setCnp("134567891234");
+        employee.setFunction(DidacticFunction.ASISTENT);
+        employee.setSalary(15000D);
+        List<Employee> employeeList = employeeMock.getEmployeeList();
+        employeeMock.modifyEmployeeFunction(employee, LECTURER);
+
+        assertEquals(ASISTENT, employee.getFunction());
+    }
+    @Test
+    void modifyEmployeeFunctionLungimeInvalida() {
+        Employee employee = new Employee();
+        employee.setIdentification(28);
+        employee.setFirstName("Bogdan");
+        employee.setLastName("Vrajitoarea");
+        employee.setCnp("134567891234");
+        employee.setFunction(DidacticFunction.ASISTENT);
+        employee.setSalary(15000D);
+        List<Employee> employeeList = employeeMock.getEmployeeList();
+        employeeList.add(employee);
+        for(int i=0;i<employeeList.size();i++){
+            employeeList.remove(i);
+        }
+
+        employeeMock.modifyEmployeeFunction(employee, LECTURER);
+
+        assertEquals(ASISTENT, employee.getFunction());
+    }
+
 }

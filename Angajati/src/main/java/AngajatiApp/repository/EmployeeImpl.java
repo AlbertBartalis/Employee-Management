@@ -33,6 +33,7 @@ public class EmployeeImpl implements EmployeeRepositoryInterface {
 				bw.write(employee.toString());
 				bw.newLine();
 				bw.close();
+				employee.setIdentification(	employeeList.size());
 				employeeList.add(employee);
 				return true;
 			} catch (IOException e) {
@@ -55,6 +56,7 @@ public class EmployeeImpl implements EmployeeRepositoryInterface {
 			while ((line = br.readLine()) != null) {
 				try {
 					final Employee employee = Employee.getEmployeeFromString(line, counter);
+					employee.setIdentification(employeeList.size());
 					employeeList.add(employee);
 					//counter++;
 				} catch (EmployeeException ex) {
