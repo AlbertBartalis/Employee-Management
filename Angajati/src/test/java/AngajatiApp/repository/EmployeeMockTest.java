@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static AngajatiApp.controller.DidacticFunction.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 class EmployeeMockTest {
@@ -203,14 +203,28 @@ class EmployeeMockTest {
         employee.setFunction(DidacticFunction.ASISTENT);
         employee.setSalary(15000D);
         List<Employee> employeeList = employeeMock.getEmployeeList();
-        employeeList.add(employee);
+       /* employeeList.add(employee);
         for(int i=0;i<employeeList.size();i++){
             employeeList.remove(i);
         }
+*/
+
 
         employeeMock.modifyEmployeeFunction(employee, LECTURER);
-
+        List<Employee> employeeListAfterModifyEmployee = employeeMock.getEmployeeList();
         assertEquals(ASISTENT, employee.getFunction());
+        assertTrue(employeeList.equals(employeeListAfterModifyEmployee));
+    }
+    @Test
+    void modifyEmployeeFunctionNullEmployee() {
+        Employee employee=null;
+        // employeeList.add(null);
+
+        employeeMock.modifyEmployeeFunction(employee, LECTURER);
+        assertThrows(NullPointerException.class,()->employee.getFunction());
+        //String newFunction=employee.getFunction().toString();
+       // assertEquals(ASISTENT, employee.getFunction());
+       // assertEquals("", employee.getFunction());
     }
 
 }
