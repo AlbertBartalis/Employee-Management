@@ -1,0 +1,18 @@
+
+v
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(å¾¶Ç8ÖÅ¾ÎÃ0
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôÍ«¼ÿÿÿÿÿ8ÖÅ¾ÎÃ0
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·‡Àáûÿÿÿÿ8×Å¾ÎÃ0
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£‹ÙÙıÿÿÿÿ8×Å¾ÎÃ0
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›¸§©8×Å¾ÎÃ0
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØíÔÊøÿÿÿÿ8×Å¾ÎÃ0
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£â¨8×Å¾ÎÃ0
+
+java:S1488L"dImmediately return this expression instead of assigning it to the temporary variable "employeeList".(Ş—¸8ØÅ¾ÎÃ0
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(©¦ºÒûÿÿÿÿ8ÙÅ¾ÎÃ0
+]
+java:S1117L"@Rename "employeeList" which hides the field declared at line 12.(Ş—¸8óÅ¾ÎÃ0
+T
+java:S1135K"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8õÅ¾ÎÃ0
+T
+java:S1135R"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8öÅ¾ÎÃ0

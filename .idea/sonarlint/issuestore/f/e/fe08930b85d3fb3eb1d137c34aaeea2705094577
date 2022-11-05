@@ -1,0 +1,12 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(úû“Ùûÿÿÿÿ8‰Æ¾ÎÃ0
+]	java:S125"<This block of commented-out lines of code should be removed.(ù–íüÿÿÿÿ8¯Æ¾ÎÃ0
+W	java:S125"<This block of commented-out lines of code should be removed.(…¾ü28´Æ¾ÎÃ0
+…
+java:S1157L"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(˜¸™çùÿÿÿÿ8ÆÆ¾ÎÃ0
+€
+java:S1157P"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(Ëá¿õ8ÈÆ¾ÎÃ0
+…
+java:S1157T"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(´Ö„¦şÿÿÿÿ8ÉÆ¾ÎÃ0
+€
+java:S1157X"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(øğ®ğ8ÉÆ¾ÎÃ0
